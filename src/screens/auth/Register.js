@@ -289,7 +289,7 @@ export default function JoySignInSideTemplate() {
           </Box>
           <Box component="footer" sx={{ py: 3 }} backgroundColor='primary.main'>
             <Typography level="body-xs" sx={{ textAlign: 'center' }}>
-              © Mkopo Pawa {new Date().getFullYear()}
+              © Bunny Surveys {new Date().getFullYear()}
             </Typography>
           </Box>
         </Box>
