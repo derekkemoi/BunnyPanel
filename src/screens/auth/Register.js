@@ -204,13 +204,13 @@ export default function JoySignInSideTemplate() {
                     name="lastName"
                   />
                 </FormControl>
-                {/* <FormControl required>
+                <FormControl required>
                   <FormLabel>Email address</FormLabel>
                   <Input
                     type="email"
                     placeholder="Enter your email address"
                     name="email" />
-                </FormControl> */}
+                </FormControl>
                 <FormControl required>
                   <FormLabel>Eligibility Level (This help us pick suitable surveys for you)</FormLabel>
                   <Select
