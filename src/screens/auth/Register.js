@@ -51,7 +51,7 @@ export default function JoySignInSideTemplate() {
   }
 
   if (loggedIn) {
-    navigate("/home")
+    navigate("/account")
   }
 
   return (
@@ -67,13 +67,13 @@ export default function JoySignInSideTemplate() {
       />
       <Box
         sx={(theme) => ({
-          width: { xs: '100%', md: '50vw' },
+          width: '100%',
           transition: 'width var(--Transition-duration)',
           transitionDelay: 'calc(var(--Transition-duration) + 0.1s)',
           position: 'relative',
-          zIndex: 1,
+          // zIndex: 1,
           display: 'flex',
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
           backdropFilter: 'blur(12px)',
           backgroundColor: 'rgba(255 255 255 / 0.1)',
           [theme.getColorSchemeSelector('dark')]: {
@@ -212,20 +212,22 @@ export default function JoySignInSideTemplate() {
                     name="email" />
                 </FormControl>
                 <FormControl required>
-                  <FormLabel>Eligibility Level (This help us pick suitable surveys for you)</FormLabel>
+                  <FormLabel>Level of Education</FormLabel>
                   <Select
                     placeholder="Select loan type"
                     name="loan"
                     required
                   >
                     <Option value="High School">High School Level</Option>
+                    <Option value="Certficate">Certificate</Option>
+                    <Option value="Diploma">Diploma</Option>
                     <Option value="Degree">Undegraduate Level(Degree)</Option>
                     <Option value="Masters">Postgraduate Level (Masters)</Option>
                     <Option value="Doctoral">Postgraduate Level (Doctoral)</Option>
                   </Select>
                 </FormControl>
                 <FormControl required>
-                  <FormLabel>Country of residence</FormLabel>
+                  <FormLabel>Country of Residence (Auto-Selected)</FormLabel>
                   <Input
                     type="text"
                     defaultValue="Kenya"
@@ -242,45 +244,45 @@ export default function JoySignInSideTemplate() {
                 <FormControl required>
                   <FormLabel>Password</FormLabel>
                   <Stack spacing={0.5} sx={{ '--hue': Math.min(password.length * 10, 120) }}>
-                  <Input
-                    type="password"
-                    placeholder="Enter your account password"
-                    required
-                    startDecorator={<Key />}
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                  />
-                  <LinearProgress
-                    determinate
-                    size="sm"
-                    value={Math.min((password.length * 100) / minLength, 100)}
-                    sx={{ bgcolor: 'background.level3', color: 'hsl(var(--hue) 80% 40%)' }}
-                  />
-                  <Typography
-                    level="body-xs"
-                    sx={{ alignSelf: 'flex-end', color: 'hsl(var(--hue) 80% 30%)' }}
-                  >
-                    {password.length < 3 && 'Very weak'}
-                    {password.length >= 3 && password.length < 6 && 'Weak'}
-                    {password.length >= 6 && password.length < 10 && 'Strong'}
-                    {password.length >= 10 && 'Very strong'}
-                  </Typography>
+                    <Input
+                      type="password"
+                      placeholder="Enter your account password"
+                      required
+                      startDecorator={<Key />}
+                      value={password}
+                      onChange={(event) => setPassword(event.target.value)}
+                    />
+                    <LinearProgress
+                      determinate
+                      size="sm"
+                      value={Math.min((password.length * 100) / minLength, 100)}
+                      sx={{ bgcolor: 'background.level3', color: 'hsl(var(--hue) 80% 40%)' }}
+                    />
+                    <Typography
+                      level="body-xs"
+                      sx={{ alignSelf: 'flex-end', color: 'hsl(var(--hue) 80% 30%)' }}
+                    >
+                      {password.length < 3 && 'Very weak'}
+                      {password.length >= 3 && password.length < 6 && 'Weak'}
+                      {password.length >= 6 && password.length < 10 && 'Strong'}
+                      {password.length >= 10 && 'Very strong'}
+                    </Typography>
                   </Stack>
                 </FormControl>
 
                 <Box
-                    sx={{
-                      // display: 'flex',
-                      // justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}
-                  >
-                    {
-                      progress ? <CircularProgress variant="solid" color="success" /> : ""
-                    }
-                  </Box>
+                  sx={{
+                    // display: 'flex',
+                    // justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}
+                >
+                  {
+                    progress ? <CircularProgress variant="solid" color="success" /> : ""
+                  }
+                </Box>
 
-                <Button style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}  type="submit" fullWidth >
+                <Button style={{ backgroundColor: '#00CC71', borderRadius: "5em" }} type="submit" fullWidth >
                   CONFIRM REGISTRATION
                 </Button>
 
@@ -294,28 +296,6 @@ export default function JoySignInSideTemplate() {
           </Box>
         </Box>
       </Box>
-      {/* <Box
-        sx={(theme) => ({
-          height: '100%',
-          position: 'fixed',
-          right: 0,
-          top: 0,
-          bottom: 0,
-          left: { xs: 0, md: '50vw' },
-          transition:
-            'background-image var(--Transition-duration), left var(--Transition-duration) !important',
-          transitionDelay: 'calc(var(--Transition-duration) + 0.1s)',
-          backgroundColor: 'background.level1',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundImage: `url(${signupImage})`,
-          [theme.getColorSchemeSelector('dark')]: {
-            backgroundImage:
-              `url(${signupImage})`,
-          },
-        })}
-      /> */}
     </CssVarsProvider>
   );
 }

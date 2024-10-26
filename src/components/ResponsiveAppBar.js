@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
 import logo from '../logo.png'
 
-const pages = ['Home', 'Profile', 'Referrals'];
+const pages = ['Home', 'Account', 'Referrals'];
 
 
 
@@ -32,8 +32,8 @@ function ResponsiveAppBar() {
     if (page == "Home") {
       navigate('/home')
     }
-    if (page == "Profile") {
-      navigate('/profile')
+    if (page == "Account") {
+      navigate('/account')
     }
     if (page == "Referrals") {
       navigate('/referrals')

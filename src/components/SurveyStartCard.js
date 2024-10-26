@@ -5,7 +5,7 @@ import Card from '@mui/joy/Card';
 import Typography from '@mui/joy/Typography';
 import { Divider } from '@mui/material';
 
-import { Alert, Box, Grid } from '@mui/joy';
+import { Alert, Box, Chip, Grid } from '@mui/joy';
 import { Paid } from '@mui/icons-material';
 
 import feather from '../assets/feather.png'
@@ -30,8 +30,9 @@ export default function SurveyStartCard(props) {
             <Card size="sm" sx={{ mt: 3 }}>
                 <Typography fontWeight={"bold"}>You are about to take Bunny Surveys.
                     and will earn
-                    <Typography
-                        fontSize="sm">Ksh {props.amount}</Typography>
+                    <Chip color="success"
+                        fontSize="sm"> Ksh {props.amount}
+                    </Chip>
                 </Typography>
                 <Divider />
                 <Typography>

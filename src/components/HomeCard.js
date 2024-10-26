@@ -23,11 +23,10 @@ export default function HomeCard() {
     return (
         <div>
             <Card sx={{ mt: 2 }} variant="soft" style={{
-                backgroundColor: "#FDBF00",
                 paddingTop: "12px",
             }}>
                 <div>
-                    <Typography>Your Total Balance</Typography>
+                    <Typography>Your Total Account Balance</Typography>
                     <Typography level="title-lg">
                         Ksh {user.accountBalance}.00</Typography>
                 </div>
@@ -38,17 +37,17 @@ export default function HomeCard() {
                             onClick={viewEarnings}
                             variant="solid"
                             endDecorator={<AccountCircleOutlined />}
-                            style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                            style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                             sx={{ ml: 'auto', alignSelf: 'center' }}
                         >
-                            Dashboard
+                            View Account
                         </Button>
                     </div>
                     <Button
                         onClick={viewRefarrals}
                         variant="solid"
                         endDecorator={<Loop />}
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                         sx={{ ml: 'auto', alignSelf: 'center' }}
                     >
                         Referrals

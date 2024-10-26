@@ -50,7 +50,7 @@ export default function ProfileCard() {
         <div>
             <Card level="body-sm" sx={{ mx: 'calc(-1 * var(--ListItem-paddingX))' }}
                 style={{
-                    backgroundColor: "#FDBF00",
+                    backgroundColor: "#FFFF",
                     paddingTop: "12px",
                 }}>
                 <div>
