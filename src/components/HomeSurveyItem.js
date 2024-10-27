@@ -119,7 +119,7 @@ export default function HomeSurveyItem(props) {
                         variant="solid"
                         style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                         sx={{ ml: 'auto', alignSelf: 'center', }}>
-                        Start
+                        Start Survey
                     </Button>
 
                 </CardContent>
