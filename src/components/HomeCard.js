@@ -15,7 +15,7 @@ export default function HomeCard() {
 
     const [user, setUser] = useAtom(userObject)
     const viewEarnings = () => {
-        navigate("/profile")
+        navigate("/account")
     }
     const viewRefarrals = () => {
         navigate("/referrals")
