@@ -67,7 +67,7 @@ export default function ProfileCard() {
                         </Typography>
 
                         <Typography align="left" >
-                            <Chip >{currentPackage.dailySurvey} surveys per day</Chip>
+                            <Chip color='success'>{currentPackage.dailySurvey} surveys per day</Chip>
                         </Typography>
                     </div>
                     <Button
