@@ -84,7 +84,7 @@ export default function HomeSurveyItem(props) {
 
                         <Typography align="left">
                             <Chip
-                                
+
                                 color="neutral"
                                 startDecorator={
                                     <Avatar size="md" src={questionMark} style={{
@@ -98,33 +98,30 @@ export default function HomeSurveyItem(props) {
                         </Typography>
                         <Typography align="left">
                             <Chip
-                                
-                                color="neutral"
+
+                                color="primary"
                                 startDecorator={
                                     <Avatar size="md" src={money} style={{
                                         width: 24,
                                         height: 24,
                                     }} />}
                             >
-                               
-                                <Sheet sx={{ pr: 7 }}>
-                                    <Tooltip title={"ksh "+props.survey.surveyAmount} arrow open placement="right">
-                                        <Typography>Payout </Typography> 
-                                    </Tooltip>
-                                </Sheet>
+                                <Typography>Payout : </Typography>
+
+                                <Typography level="title-lg">{"ksh " + props.survey.surveyAmount}</Typography>
 
                             </Chip>
                         </Typography>
-                        
+
                     </div>
                     <Button
                         onClick={startSurvey}
                         variant="solid"
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                         sx={{ ml: 'auto', alignSelf: 'center', }}>
                         Start
                     </Button>
-                    
+
                 </CardContent>
             </Card>
             <Modal open={open} onClose={() => setOpen(false)}>
