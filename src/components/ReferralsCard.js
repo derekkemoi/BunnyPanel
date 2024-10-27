@@ -26,7 +26,6 @@ export default function ReferralCard() {
     return (
         <div>
             <Card size="sm" style={{
-                backgroundColor: "#FDBF00",
                 paddingTop: "12px",
             }}>
                 <Typography>Earn Ksh 40 on each survey your referral completes. Below is your referral code.</Typography>
