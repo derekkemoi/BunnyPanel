@@ -72,7 +72,7 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={upgrade}
-                        style={{ backgroundColor: '#FFFF00', borderRadius: "5em" }}
+                        style={{ backgroundColor: '#E49B0F', borderRadius: "5em" }}
                         endDecorator={<Stars />}
                         sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
                     >
