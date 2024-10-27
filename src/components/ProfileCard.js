@@ -72,7 +72,7 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={upgrade}
-                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
+                        style={{ backgroundColor: '#FFFF00', borderRadius: "5em" }}
                         endDecorator={<Stars />}
                         sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
                     >
@@ -86,7 +86,7 @@ export default function ProfileCard() {
                         <Typography align="left">
                             <Chip
 
-                                color="neutral"
+                                color="success"
                                 startDecorator={
                                     <Avatar size="md" src={money} style={{
                                         width: 20,
@@ -115,7 +115,7 @@ export default function ProfileCard() {
                         <Typography align="left">Available Surveys:</Typography>
                         <Typography align="left">
                             <Chip
-                                color="neutral"
+                                color="success"
                                 startDecorator={
                                     <Avatar size="md" src={questionMark} style={{
                                         width: 20,
