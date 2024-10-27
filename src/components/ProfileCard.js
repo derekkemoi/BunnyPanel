@@ -57,7 +57,7 @@ export default function ProfileCard() {
                     <Typography align="left" level="title-lg" startDecorator={<AccountCircleOutlined />}>{user.firstName} {user.lastName}</Typography>
                     <Typography align="left" startDecorator={<EmailOutlined />}>{user.email}</Typography>
                     <Divider />
-                    
+
                 </div>
                 <CardContent orientation="horizontal">
                     <div>
@@ -72,7 +72,7 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={upgrade}
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                         endDecorator={<Stars />}
                         sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
                     >
@@ -101,7 +101,7 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={withdraw}
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                        style={{ borderRadius: "5em" }}
                         endDecorator={<Paid />}
                         aria-label="Explore Bahamas Islands"
                         sx={{ ml: 'auto', alignSelf: 'center' }}
@@ -127,7 +127,7 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={takeSurveys}
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                         endDecorator={<ListAltOutlined />}
                         sx={{ ml: 'auto', alignSelf: 'center' }}
                     >
@@ -144,7 +144,7 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={viewRefarrals}
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
+                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
                         endDecorator={<Loop />}
                         aria-label="Explore Bahamas Islands"
                         sx={{ ml: 'auto', alignSelf: 'center' }}
@@ -193,8 +193,8 @@ export default function ProfileCard() {
                     </div>
                     <Button
                         onClick={Addpayments}
-                        style={{ backgroundColor: '#00CC71',borderRadius: "5em" }}
-                       
+                        style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
+
                         endDecorator={<Add />}
                         sx={{ ml: 'auto', alignSelf: 'center' }}
                     >
