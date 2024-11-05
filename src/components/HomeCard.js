@@ -9,6 +9,7 @@ import { Divider } from '@mui/material';
 import { useAtom } from 'jotai';
 import { userObject } from "../state";
 import { AccountBalanceWallet, AccountCircleOutlined, Loop, Loyalty } from '@mui/icons-material';
+import userEvent from '@testing-library/user-event';
 
 export default function HomeCard() {
     const navigate = useNavigate()
@@ -20,6 +21,7 @@ export default function HomeCard() {
     const viewRefarrals = () => {
         navigate("/referrals")
     }
+    console.log("User", user)
     return (
         <div>
             <Card sx={{ mt: 2 }} variant="soft" style={{

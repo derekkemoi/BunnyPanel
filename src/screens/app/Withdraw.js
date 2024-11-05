@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from 'jotai';
-import { userObject } from "../../state";
+import { userObject, paymentDetails } from "../../state";
 
 import mpesaLogo from '../../assets/mpesa.png'
 import {
@@ -15,21 +15,37 @@ import Tabs from '../../components/ResponsiveAppBar'
 export default function Withdraw() {
   const navigate = useNavigate()
   const [amountError, setAmountError] = React.useState(false)
+  const [withdrawError, setWithdrawError] = React.useState(false)
+  const [withdrawMsg, setWithdrawMsg] = React.useState("")
   const [showProgressDialog, setProgressDialog] = useState(false);
 
   const [user, setUser] = useAtom(userObject)
+  const [payments] = useAtom(paymentDetails)
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    if (data.get('amount').length < 2 || data.get('amount').length > user.minimumWithDrawal || data.get('amount').length > user.accountBalance) {
-      setAmountError(true)
-      return
+    if (payments.added) {
+      if (user.accountBalance >= 1000) {
+        setWithdrawError(true)
+        setWithdrawMsg("You can only withdraw on 7th, 15th and 22nd of every month")
+        return
+      } else {
+        if (data.get('amount').length < 2 || data.get('amount').length > user.minimumWithDrawal || data.get('amount').length > user.accountBalance) {
+          setAmountError(true)
+          return
+        } else {
+          setAmountError(false)
+        }
+      }
     } else {
-      setAmountError(false)
+      setWithdrawError(true)
+      setWithdrawMsg("Payments details required. Add from your account")
+      return
     }
+
 
 
     setProgressDialog(true)
@@ -58,6 +74,7 @@ export default function Withdraw() {
         <Typography level="h3">
           Withdraw
         </Typography>
+
         <Divider sx={{ mt: 0.5, mb: 0.5 }} />
         <Grid xs={12}>
           <Grid container justifyContent="center" spacing={2}>
@@ -78,6 +95,12 @@ export default function Withdraw() {
               <Card size="lg">
 
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                  {
+                    withdrawError ?
+                      <Typography level="h5" color="danger">
+                        {withdrawMsg}
+                      </Typography> : ""
+                  }
                   <FormControl>
                     <FormLabel>
                       Account Balance :
@@ -105,12 +128,7 @@ export default function Withdraw() {
                   {
                     showProgressDialog ? <LinearProgress /> : <div></div>
                   }
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="solid"
-                    sx={{ mt: 3, mb: 2 }}
-                  >
+                   <Button sx={{ mt: 4 }} style={{ backgroundColor: '#00CC71', borderRadius: "5em" }} type="submit" fullWidth >
                     Withdraw
                   </Button>
                 </Box>
