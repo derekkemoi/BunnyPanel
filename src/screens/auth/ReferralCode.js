@@ -16,7 +16,7 @@ export default function ReferralCode() {
       setCodeError(true);
       return
     }
-    navigate("/account")
+    navigate("/home")
   };
 
   const validateReferralCode = (code) => {
