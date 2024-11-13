@@ -52,7 +52,7 @@ export default function AddPayments() {
         added: true
       }))
       setProgressDialog(false)
-      navigate("/profile")
+      navigate("/account")
     }, 5000);
 
 
