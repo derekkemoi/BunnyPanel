@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
+import { useNavigate } from "react-router-dom";
 import { Card, LinearProgress, Container, Typography, Box, Grid, Button, ListDivider } from "@mui/joy";
 import logo from "../../assets/logo.png"
 
 
 export default function ReferralCode() {
+  const navigate = useNavigate()
   const [showProgressDialog, setProgressDialog] = useState(false);
   const [codeError, setCodeError] = useState(false);
   const handleSubmit = (event) => {
@@ -16,7 +18,7 @@ export default function ReferralCode() {
       setCodeError(true);
       return
     }
-    navigate("/home")
+    navigate("/account")
   };
 
   const validateReferralCode = (code) => {
@@ -86,7 +88,7 @@ export default function ReferralCode() {
           </Button>
           <Grid container >
             <Grid item>
-              <Link href="/home" variant="body2">
+              <Link style={{ color: '#00CC71', borderRadius: "5em" }} href="/home" variant="body1">
                 I don't have a referral code
               </Link>
             </Grid>
