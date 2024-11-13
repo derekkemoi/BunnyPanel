@@ -35,7 +35,7 @@ export default function Withdraw() {
             setAmountErrorMsg("Please enter a valid amount.");
           }
           if (amount < packageSubscribed.minimumWithdrawal) {
-            setAmountErrorMsg(`Minimum withdrawal amount is Ksh ${packageSubscribed.minimumWithdrawal}. Upgrade tour account to earn more`);
+            setAmountErrorMsg(`Minimum withdrawal amount is Ksh ${packageSubscribed.minimumWithdrawal}. Upgrade your account to earn more`);
           } 
           if ( amount > user.accountBalance) {
             setAmountErrorMsg(`You only have ${user.accountBalance} in your account`);
