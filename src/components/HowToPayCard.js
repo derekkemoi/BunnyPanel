@@ -11,7 +11,7 @@ import { CopyAll } from '@mui/icons-material';
 
 export default function HowToPayCard(props) {
     const copyToClipBoard = () => {
-        window.alert("Till number " + props.data.tillNumber)
+        window.alert("You have copied" + props.data.tillNumber + " Till Number")
         navigator.clipboard.writeText(props.data.tillNumber);
     }
     return (
@@ -42,7 +42,7 @@ export default function HowToPayCard(props) {
                         : <div></div>
                 }
                 <ListItem>
-                    <Chip variant="soft" startDecorator={<Check />} endDecorator={<Typography fontWeight={"bold"}>Enter till no : {props.data.tillNumber}</Typography>}>
+                    <Chip variant="soft" startDecorator={<Check />} endDecorator={<Typography fontWeight={"bold"}>Enter Till No : {props.data.tillNumber}</Typography>}>
                         Select :
                     </Chip>
                     <IconButton variant="solid" color='primary' onClick={copyToClipBoard}>
