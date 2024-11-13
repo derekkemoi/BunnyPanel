@@ -11,8 +11,21 @@ export default function ReferralCode() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    setCodeError(true);
+    const referralCode = data.get('referralCode');
+    if (!validateReferralCode(referralCode)) {
+      setCodeError(true);
+      return
+    }
+    navigate("/account")
   };
+
+  const validateReferralCode = (code) => {
+    // Assuming the referral code should be exactly 10 characters long and alphanumeric
+    const codeFormat = /^[A-Z0-9]{10}$/;
+    return codeFormat.test(code);
+  };
+
+
 
   return (
 
@@ -66,6 +79,7 @@ export default function ReferralCode() {
             type="submit"
             fullWidth
             variant="solid"
+            style={{ backgroundColor: '#00CC71', borderRadius: "5em" }}
             sx={{ mt: 3, mb: 2 }}
           >
             Submit
