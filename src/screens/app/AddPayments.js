@@ -85,7 +85,7 @@ export default function AddPayments() {
               <Card size="lg" variant="outlined">
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                   <FormControl required>
-                    <FormLabel>Mpesa Number</FormLabel>
+                    <FormLabel>M-PESA Number</FormLabel>
                     <MuiTelInput
                       fullWidth
                       // label="M-PESA Number"
@@ -128,14 +128,9 @@ export default function AddPayments() {
                   {
                     showProgressDialog ? <LinearProgress /> : <div></div>
                   }
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="solid"
-                    sx={{ mt: 3, mb: 2 }}
-                  >
+                  <Button sx={{ mt: 4 }} style={{ backgroundColor: '#00CC71', borderRadius: "5em" }} type="submit" fullWidth>
                     Submit
-                  </Button>
+                </Button>
                 </Box>
               </Card>
             </Grid>
