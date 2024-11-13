@@ -29,11 +29,6 @@ export default function Withdraw() {
     const amount = Number(data.get('amount'));
 
     if (payments.added) {
-      if (!isWithdrawalDay()) {
-        setWithdrawError(true);
-        setWithdrawMsg("Payments processing and withdrawal is done on 15th and 30th of every month");
-        return;
-      } else {
         if (isNaN(amount) || amount < packageSubscribed.minimumWithdrawal || amount > user.accountBalance) {
           setAmountError(true);
           if (isNaN(amount)) {
@@ -50,7 +45,6 @@ export default function Withdraw() {
           setAmountError(false);
           setAmountErrorMsg("");
         }
-      }
     } else {
       setWithdrawError(true);
       setWithdrawMsg("Payments details required. Add from your account");
