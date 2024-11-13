@@ -28,7 +28,7 @@ const customTheme = extendTheme({ defaultColorScheme: 'dark' });
 export default function JoySignInSideTemplate() {
   const navigate = useNavigate()
   const navigateToHome = () => {
-    navigate("/home")
+    navigate("/referralCode")
   }
 
   function randomAmount(min, max) {
