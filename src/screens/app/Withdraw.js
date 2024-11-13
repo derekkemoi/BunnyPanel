@@ -58,7 +58,7 @@ export default function Withdraw() {
       //   added: true
       // }))
       setProgressDialog(false)
-      navigate("/profile")
+      navigate("/account")
     }, 5000);
 
 
